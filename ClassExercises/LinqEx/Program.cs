@@ -46,43 +46,74 @@ class Program
         // QUERIES!
 
         // - how many Songs start with the letter 'a' (case insensitive)
+        Console.WriteLine("Starts with a");
+        Console.WriteLine(Songs.Where(s => s.Name.ToLower().StartsWith("a")).ToList().Count);
+
         // - how many artists end with letter 'a' (case insensitive)
+        Console.WriteLine("Ends with a");
+        Console.WriteLine(Artists.Where(a => a.FullName.ToLower().EndsWith("a")).ToList().Count);
+
         // - whats the name of the song with longest duration
+        Console.WriteLine("Song with longes duration");
+        string nameOfLongestSong = Songs.OrderBy(s => s.Duration).Last().Name;
+        Console.WriteLine(nameOfLongestSong);
+
         // - whats the total Duration of all Songs
+        Console.WriteLine("Total duration of all songs");
+        Console.WriteLine(Songs.Sum(s => s.Duration));
+
         // - how many albums have Songs longer than 300 seconds
+        Console.WriteLine("Albums with songs longer than 300sec");
+        Console.WriteLine(Albums.Where(a => a.Songs.Where(s => s.Duration > 300).ToList().Count > 0).ToList().Count);
+
         // - print the names of the artists(separated with "--"), that have more than one album of PopRock genre
+        Console.WriteLine("Names of artist with more than one popRock album");
+        Artists.Where(a => a.Albums.Where(a => a.Genre == Genre.PopRock).Count() > 1).ToList().ForEach(a => Console.Write(a.FullName + " -- "));
+
         // - print the name of the album that has highest Average duration of a song
+        Console.WriteLine("Album with higest average song duration");
+        string highestSongDuration = Albums.OrderByDescending(a => a.Songs.Average(s => s.Duration)).First().Name;
+        Console.WriteLine(highestSongDuration);
+
         // - how many characters has the song that has the shortest Duration
+        Console.WriteLine("Number of characters of song with shortest duration");
+        Console.WriteLine(Songs.OrderBy(s => s.Duration).First().Name.Length);
+
         // - print the name and the genre of the album that has most songs
+        Console.WriteLine("Genre and name of album with most songs");
+        Album mostSongs = Albums.OrderByDescending(a => a.Songs.Count).First();
+        Console.WriteLine($"{mostSongs.Name} {mostSongs.Genre}");
+
         // - print the name of the artist that has most songs
+        Console.WriteLine("Name of artist with most songs");
+        string nameOfArtistWithMostSongs = Artists.OrderByDescending(a => a.Albums.Aggregate(0, (total, next) => total += next.Songs.Count)).First().FullName;
+        Console.WriteLine(nameOfArtistWithMostSongs);
+
         // - print the type of the artist(SoloArtist/Band) that has most albums published before year 2000
+        Console.WriteLine("Type of artist with most albums after 2000");
+        Console.WriteLine(Artists.OrderByDescending(a => a.Albums.Where(a => a.Year > 2000).Count()).First().ArtistType);
+
         // - print the average song duration, of the album that has most songs
+        Console.WriteLine("Average song duration of album with most songs");
+        Console.WriteLine(Albums.OrderBy(a => a.Songs.Count).Last().Songs.Average(s => s.Duration));
 
         // Bonus:
         // - print the longest song duration of the album that has least songs
+        Console.WriteLine("Longes song duration of album with leas songs");
+        Console.WriteLine(Albums.OrderBy(a => a.Songs.Count).First().Songs.OrderByDescending(s => s.Duration).First().Duration);
+
         // - print the name of the album that has most songs that contain letter 'a' in the name
+        Console.WriteLine("Name of the album that has most songs that contain letter a in the name");
+        Console.WriteLine(Albums.OrderByDescending(a => a.Songs.Where(s => s.Name.ToLower().Contains('a')).Count()).First().Name);
+
         // - print the name of the artist that has most songs that end with letter 'd'
-
-
+        Console.WriteLine("Name of artist that has most songs that end with letter d");
+        Console.WriteLine(Artists.OrderByDescending(a => a.Albums.Aggregate(0, (total, next) => total += next.Songs.Where(s => s.Name.ToLower().EndsWith('d')).Count())).First().FullName);
 
 
         // ************ Don't mind the structure, focus on the lists declared on the beginning of Program.cs ****************
 
         // 3, 2, 1.... GO! :)
-        Console.WriteLine("Starts with a");
-        Console.WriteLine(Songs.Where(s => s.Name.ToLower().StartsWith("a")).ToList().Count);
-        Console.WriteLine("Ends with a");
-        Console.WriteLine(Artists.Where(a => a.FullName.ToLower().EndsWith("a")).ToList().Count);
-        Console.WriteLine("Song with longes duration");
-        string nameOfLongestSong = Songs.OrderBy(s => s.Duration).Last().Name;
-        Console.WriteLine(nameOfLongestSong);
-        Console.WriteLine("Total duration of all songs");
-        Console.WriteLine(Songs.Sum(s => s.Duration));
-        Console.WriteLine("Albums with songs longer than 300sec");
-        Console.WriteLine(Albums.Where(a => a.Songs.Where(s => s.Duration > 300).ToList().Count > 0).ToList().Count);
-        Console.WriteLine("");
-
-
         Console.ReadLine();
     }
 
