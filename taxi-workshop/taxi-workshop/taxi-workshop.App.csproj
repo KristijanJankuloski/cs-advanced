@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>taxi_workshop</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj" />
+    <ProjectReference Include="..\taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj" />
+    <ProjectReference Include="..\taxi-workshop.Services\taxi-workshop.Services.csproj" />
+  </ItemGroup>
+
+</Project>
