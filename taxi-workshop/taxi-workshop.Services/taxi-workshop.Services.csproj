@@ -7,4 +7,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj" />
+    <ProjectReference Include="..\taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj" />
+  </ItemGroup>
+
 </Project>
