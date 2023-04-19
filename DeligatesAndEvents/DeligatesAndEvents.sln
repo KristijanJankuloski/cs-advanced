@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Deligates", "Deligates\Deligates.csproj", "{90D929DC-3B59-4D22-9180-82C29F890247}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{45E8C714-2664-4972-959F-46DDE6521779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsWinForms", "EventsWinForms\EventsWinForms.csproj", "{63EE1951-4B7D-47B7-9FB3-D58753E20502}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90D929DC-3B59-4D22-9180-82C29F890247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90D929DC-3B59-4D22-9180-82C29F890247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90D929DC-3B59-4D22-9180-82C29F890247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90D929DC-3B59-4D22-9180-82C29F890247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E8C714-2664-4972-959F-46DDE6521779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E8C714-2664-4972-959F-46DDE6521779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E8C714-2664-4972-959F-46DDE6521779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E8C714-2664-4972-959F-46DDE6521779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EE1951-4B7D-47B7-9FB3-D58753E20502}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EE1951-4B7D-47B7-9FB3-D58753E20502}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EE1951-4B7D-47B7-9FB3-D58753E20502}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EE1951-4B7D-47B7-9FB3-D58753E20502}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5215AAC-BD33-4697-BD83-5AF4897CFEAF}
+	EndGlobalSection
+EndGlobal
