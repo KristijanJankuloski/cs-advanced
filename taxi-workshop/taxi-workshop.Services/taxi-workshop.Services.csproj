@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Utils\" />
+    <ProjectReference Include="..\taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj" />
+    <ProjectReference Include="..\taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj" />
-    <ProjectReference Include="..\taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>
