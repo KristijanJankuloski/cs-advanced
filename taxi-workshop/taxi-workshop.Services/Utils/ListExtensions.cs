@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace taxi_workshop.Services.Utils
 {
-    internal class ListExtensions
+    public static class ListExtensions
     {
+
     }
 }
