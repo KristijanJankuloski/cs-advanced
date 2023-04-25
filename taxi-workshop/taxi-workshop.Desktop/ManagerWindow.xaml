@@ -1,0 +1,47 @@
+﻿<Window x:Class="taxi_workshop.Desktop.ManagerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:taxi_workshop.Desktop"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Icon="/taxi.png"
+        Title="ManagerWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="All drivers">
+                <Grid Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Driver license status">
+                <Grid Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Assign a driver">
+                <Grid Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Unassign a driver">
+                <Grid Background="#FFE5E5E5">
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Change password">
+                <Grid Background="#FFE5E5E5">
+                    <Label Content="Old password:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="txtOldPwd" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top" Width="167"/>
+                    <Label Content="New password:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
+                    <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                    <PasswordBox x:Name="txtRepeatPwd" HorizontalAlignment="Left" Margin="125,76,0,0" VerticalAlignment="Top" Width="167"/>
+                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnLogout" Content="Log out" HorizontalAlignment="Right" Margin="0,1,10,0" VerticalAlignment="Top" Height="20" Width="56" Click="btnLogout_Click" />
+    </Grid>
+</Window>

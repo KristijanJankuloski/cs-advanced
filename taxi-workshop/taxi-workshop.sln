@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxi-workshop.App", "taxi-workshop\taxi-workshop.App.csproj", "{8BC0D287-37EE-47C6-BA52-C428F8EBF04D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "taxi-workshop.App", "taxi-workshop\taxi-workshop.App.csproj", "{8BC0D287-37EE-47C6-BA52-C428F8EBF04D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxi-workshop.DomainModels", "taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj", "{0EE8FCA6-F2A9-4D8F-BA01-3F8C7CCE6D7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "taxi-workshop.DomainModels", "taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj", "{0EE8FCA6-F2A9-4D8F-BA01-3F8C7CCE6D7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxi-workshop.Services", "taxi-workshop.Services\taxi-workshop.Services.csproj", "{C3601465-ACC7-45DF-B57D-BAC4348FAA2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "taxi-workshop.Services", "taxi-workshop.Services\taxi-workshop.Services.csproj", "{C3601465-ACC7-45DF-B57D-BAC4348FAA2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxi-workshop.DataAccess", "taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj", "{F52A8C8B-9764-4FDB-BC70-5F9E594A3C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "taxi-workshop.DataAccess", "taxi-workshop.DataAccess\taxi-workshop.DataAccess.csproj", "{F52A8C8B-9764-4FDB-BC70-5F9E594A3C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "taxi-workshop.Desktop", "taxi-workshop.Desktop\taxi-workshop.Desktop.csproj", "{38C9B6F2-0C4D-4D94-8950-DD0A3D36580C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F52A8C8B-9764-4FDB-BC70-5F9E594A3C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F52A8C8B-9764-4FDB-BC70-5F9E594A3C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F52A8C8B-9764-4FDB-BC70-5F9E594A3C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C9B6F2-0C4D-4D94-8950-DD0A3D36580C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C9B6F2-0C4D-4D94-8950-DD0A3D36580C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C9B6F2-0C4D-4D94-8950-DD0A3D36580C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C9B6F2-0C4D-4D94-8950-DD0A3D36580C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

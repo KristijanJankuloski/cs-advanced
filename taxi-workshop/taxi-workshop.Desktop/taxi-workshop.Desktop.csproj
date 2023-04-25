@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>taxi_workshop.Desktop</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="taxi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\taxi-workshop.DomainModels\taxi-workshop.DomainModels.csproj" />
+    <ProjectReference Include="..\taxi-workshop.Services\taxi-workshop.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Static\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="taxi.png" />
+  </ItemGroup>
+
+</Project>
