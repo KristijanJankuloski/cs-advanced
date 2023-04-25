@@ -22,15 +22,24 @@ namespace taxi_workshop.Desktop
     /// </summary>
     public partial class AdminWindow : Window
     {
+        private List<User> userList = ServiceHelper.userService.GetAll();
         public AdminWindow()
         {
             InitializeComponent();
             comboRole.ItemsSource = Enum.GetValues(typeof(Role)).Cast<Role>();
+            dataGridUsers.ItemsSource = userList;
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            dataGridUsers.ItemsSource = ServiceHelper.userService.GetAll();
+            userList = ServiceHelper.userService.GetAll();
+            dataGridUsers.Items.Refresh();
+        }
+
+        private void refreshItems_Click(object sender, RoutedEventArgs e)
+        {
+            userList = ServiceHelper.userService.GetAll();
+            dataGridUsers.Items.Refresh();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -40,18 +49,14 @@ namespace taxi_workshop.Desktop
             login.Show();
             Close();
         }
-        
-        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
 
         private void btnDeleteSelected_Click(object sender, RoutedEventArgs e)
         {
             User userToDelete = (User)dataGridUsers.SelectedItem;
             ServiceHelper.userService.Remove(userToDelete.Id);
             MessageBox.Show("Selected user has been deleted", "User deleted", MessageBoxButton.OK);
-            dataGridUsers.ItemsSource = ServiceHelper.userService.GetAll();
+            userList = ServiceHelper.userService.GetAll();
+            dataGridUsers.Items.Refresh();
         }
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)

@@ -12,12 +12,52 @@
         <TabControl>
             <TabItem Header="All drivers">
                 <Grid Background="#FFE5E5E5">
-                    
+                    <DataGrid x:Name="dataGridListDrivers" CanUserAddRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="50" />
+                            <DataGridTextColumn Header="First name" Binding="{Binding FirstName}" Width="120" />
+                            <DataGridTextColumn Header="Last name" Binding="{Binding LastName}" Width="120" />
+                            <DataGridTextColumn Header="Shift" Binding="{Binding Shift}" Width="80" />
+                            <DataGridTextColumn Header="Car" Binding="{Binding Path=Car.Model}" Width="120" />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Driver license status">
                 <Grid Background="#FFE5E5E5">
-                    
+                    <DataGrid x:Name="dataGridDriverLicense" CanUserAddRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="First name" Binding="{Binding FirstName}" Width="120" />
+                            <DataGridTextColumn Header="Last name" Binding="{Binding LastName}" Width="120" />
+                            <DataGridTextColumn Header="License" Binding="{Binding License}" Width="120" />
+                            <DataGridTextColumn Header="Date" Binding="{Binding LicenseExpieryDate}" Width="120" />
+                            <DataGridTemplateColumn Header="Status" Width="80">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Status}">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Valid">
+                                                            <Setter Property="Background" Value="Green" />
+                                                            <Setter Property="Foreground" Value="White" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Warning">
+                                                            <Setter Property="Background" Value="Yellow" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding Status}" Value="Expired">
+                                                            <Setter Property="Background" Value="DarkRed" />
+                                                            <Setter Property="Foreground" Value="White" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Assign a driver">
@@ -38,7 +78,7 @@
                     <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
                     <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                     <PasswordBox x:Name="txtRepeatPwd" HorizontalAlignment="Left" Margin="125,76,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" />
+                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" Click="btnChangePassword_Click" />
                 </Grid>
             </TabItem>
         </TabControl>

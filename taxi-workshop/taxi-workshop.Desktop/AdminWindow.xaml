@@ -28,22 +28,16 @@
                             <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50" />
                             <DataGridTextColumn Header="Usename" Binding="{Binding Username}" Width="200" />
                             <DataGridTextColumn Header="Role" Binding="{Binding Role}" Width="150" />
-                            <!--<DataGridTemplateColumn Header="Delete" Width="50">
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <Button Content="X" Background="#FFE20000" Click="btnDeleteUser_Click"></Button>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>-->
                         </DataGrid.Columns>
                     </DataGrid>
                     <Button x:Name="btnDeleteSelected" Height="25" Width="120" Content="Delete selected user" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="btnDeleteSelected_Click" />
+                    <Button x:Name="refreshItems" Content="Refresh" HorizontalAlignment="Right" Margin="0,0,130,0" VerticalAlignment="Bottom" Height="25" Width="56" Click="refreshItems_Click" />
                 </Grid>
             </TabItem>
             <TabItem Header="Change password">
                 <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
                     <Label Content="Old password:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtOldPwd" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top" Width="167"/>
+                    <PasswordBox x:Name="txtOldPwd" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top" Width="167" />
                     <Label Content="New password:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                     <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
                     <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
