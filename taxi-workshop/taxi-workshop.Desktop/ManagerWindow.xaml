@@ -9,7 +9,7 @@
         Icon="/taxi.png"
         Title="ManagerWindow" Height="450" Width="800">
     <Grid>
-        <TabControl x:Name="tabControlManager" Selected="tabControlManager_Selected">
+        <TabControl x:Name="tabControlManager">
             <TabItem Header="All drivers">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="dataGridListDrivers" CanUserAddRows="False" AutoGenerateColumns="False">
