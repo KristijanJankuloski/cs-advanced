@@ -73,5 +73,12 @@ namespace taxi_workshop.Desktop
             txtNewPwd.Password = string.Empty;
             txtRepeatPwd.Password = string.Empty;
         }
+
+        private void tabControlManager_Selected(object sender, RoutedEventArgs e)
+        {
+            if (tabControlManager.SelectedIndex != 2)
+                return;
+
+        }
     }
 }

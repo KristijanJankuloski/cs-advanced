@@ -42,7 +42,7 @@
                     <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
                     <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
                     <PasswordBox x:Name="txtRepeatPwd" HorizontalAlignment="Left" Margin="125,76,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" Click="btnChangePassword_Click"/>
+                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" Click="btnChangePassword_Click" Padding="2" />
                 </Grid>
             </TabItem>
         </TabControl>

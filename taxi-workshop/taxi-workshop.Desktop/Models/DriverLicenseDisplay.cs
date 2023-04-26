@@ -25,6 +25,11 @@ namespace taxi_workshop.Desktop.Models
             LicenseExpieryDate = licenseDate.ToShortDateString();
             Status = status;
         }
-        public DriverLicenseDisplay(){}
+        public DriverLicenseDisplay(){
+            FirstName = string.Empty;
+            LastName = string.Empty;
+            License = string.Empty;
+            LicenseExpieryDate = string.Empty;
+        }
     }
 }
