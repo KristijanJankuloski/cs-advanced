@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using taxi_workshop.Desktop.Helpers;
 using taxi_workshop.Desktop.Models;
 using taxi_workshop.DomainModels.Models;
+using taxi_workshop.Desktop.Fragments;
 
 namespace taxi_workshop.Desktop
 {
@@ -35,6 +36,8 @@ namespace taxi_workshop.Desktop
                 driverLicenseDisplays.Add(display);
             }
             dataGridDriverLicense.ItemsSource = driverLicenseDisplays;
+
+            tabItemChangePassword.Content = new ChangePasswordControl();
         }
 
         private void btnLogout_Click(object sender, RoutedEventArgs e)
@@ -45,40 +48,28 @@ namespace taxi_workshop.Desktop
             Close();
         }
 
-        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtNewPwd.Password == string.Empty)
-            {
-                MessageBox.Show("New password is empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            if (txtNewPwd.Password != txtRepeatPwd.Password)
-            {
-                MessageBox.Show("Repeated passwrods do not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            if (txtOldPwd.Password == txtNewPwd.Password)
-            {
-                MessageBox.Show("New password cannot match old password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (!ServiceHelper.userService.ChangePassword(txtOldPwd.Password, txtNewPwd.Password))
-            {
-                MessageBox.Show("Old password is incorrect", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            MessageBox.Show("Your password has been updated", "Password changed");
-            txtOldPwd.Password = string.Empty;
-            txtNewPwd.Password = string.Empty;
-            txtRepeatPwd.Password = string.Empty;
-        }
-
         private void tabControlManager_Selected(object sender, RoutedEventArgs e)
         {
-            if (tabControlManager.SelectedIndex != 2)
-                return;
+            if (tabControlManager.SelectedIndex == 2)
+                tabControlManager_AssignSelected();
+            else if (tabControlManager.SelectedIndex == 3)
+                tabControlManager_UnassignSelected();
 
+        }
+
+        private void tabControlManager_AssignSelected()
+        {
+            var availableDrivers = ServiceHelper.driverService.GetAll().Where(driver => driver.Car == null);
+            assignDriverListBox.ItemsSource = availableDrivers;
+            //.Select(driver => $"{driver.FirstName} {driver.LastName}")
+            assignCarListBox.ItemsSource = ServiceHelper.carService.GetAll().Where(car => ServiceHelper.carService.IsCarAvailable(car));
+
+        }
+
+        private void tabControlManager_UnassignSelected()
+        {
+            var driversWithCars = ServiceHelper.driverService.GetAll().Where(driver => driver.Car != null);
+            unassignDriver.ItemsSource = driversWithCars;
         }
     }
 }

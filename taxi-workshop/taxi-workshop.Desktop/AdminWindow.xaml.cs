@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using taxi_workshop.Desktop.Helpers;
 using taxi_workshop.DomainModels.Enums;
 using taxi_workshop.DomainModels.Models;
+using taxi_workshop.Desktop.Fragments;
 
 namespace taxi_workshop.Desktop
 {
@@ -28,6 +29,8 @@ namespace taxi_workshop.Desktop
             InitializeComponent();
             comboRole.ItemsSource = Enum.GetValues(typeof(Role)).Cast<Role>();
             dataGridUsers.ItemsSource = userList;
+
+            tabItemChangePassword.Content = new ChangePasswordControl();
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,35 +70,6 @@ namespace taxi_workshop.Desktop
             txtUsername.Text = string.Empty;
             txtPassword.Text = string.Empty;
             MessageBox.Show("User added successfully", "User Added", MessageBoxButton.OK);
-        }
-
-        private void btnChangePassword_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtNewPwd.Password == string.Empty)
-            {
-                MessageBox.Show("New password is empty", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            if (txtNewPwd.Password != txtRepeatPwd.Password)
-            {
-                MessageBox.Show("Repeated passwrods do not match", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            if (txtOldPwd.Password == txtNewPwd.Password)
-            {
-                MessageBox.Show("New password cannot match old password", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-
-            if (!ServiceHelper.userService.ChangePassword(txtOldPwd.Password, txtNewPwd.Password))
-            {
-                MessageBox.Show("Old password is incorrect", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
-            MessageBox.Show("Your password has been updated", "Password changed");
-            txtOldPwd.Password = string.Empty;
-            txtNewPwd.Password = string.Empty;
-            txtRepeatPwd.Password = string.Empty;
         }
     }
 }

@@ -34,16 +34,7 @@
                     <Button x:Name="refreshItems" Content="Refresh" HorizontalAlignment="Right" Margin="0,0,130,0" VerticalAlignment="Bottom" Height="25" Width="56" Click="refreshItems_Click" />
                 </Grid>
             </TabItem>
-            <TabItem Header="Change password">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
-                    <Label Content="Old password:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtOldPwd" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top" Width="167" />
-                    <Label Content="New password:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtRepeatPwd" HorizontalAlignment="Left" Margin="125,76,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" Click="btnChangePassword_Click" Padding="2" />
-                </Grid>
+            <TabItem Header="Change password" x:Name="tabItemChangePassword">
             </TabItem>
         </TabControl>
         <Button x:Name="btnLogout" Content="Log out" HorizontalAlignment="Right" Margin="0,1,10,0" VerticalAlignment="Top" Height="20" Width="56" Click="btnLogout_Click" />

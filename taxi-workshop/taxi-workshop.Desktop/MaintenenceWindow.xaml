@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:taxi_workshop.Desktop"
+        xmlns:fragments="clr-namespace:taxi_workshop.Desktop.Fragments"
         mc:Ignorable="d"
         Title="MaintenenceWindow" Height="450" Width="800">
     <Grid>
-        
+        <TabControl>
+            <TabItem Header="List all cars">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="ListAllCarsListView" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Car licenses">
+                <Grid Background="#FFE5E5E5">
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Change password" x:Name="tabItemChangePassword">
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnLogout" Content="Log out" HorizontalAlignment="Right" Margin="0,1,10,0" VerticalAlignment="Top" Height="20" Width="56" Click="btnLogout_Click" />
     </Grid>
 </Window>

@@ -29,11 +29,13 @@ namespace taxi_workshop.Desktop.Helpers
 
             Driver newDriver1 = new Driver("John", "Doe", Shift.Morning, carService.GetSingle(1), "A12345", DateTime.Now.AddMonths(4));
             Driver newDriver2 = new Driver("Bob", "Bobski", Shift.Evening, carService.GetSingle(1), "A12323", DateTime.Now.AddMonths(2));
+            Driver newDriver3 = new Driver("John", "Bobs", Shift.NoShift, null, "A13441", DateTime.Now.AddMonths(6));
             carService.GetSingle(1).AssignedDrivers.Add(newDriver1);
             carService.GetSingle(1).AssignedDrivers.Add(newDriver2);
 
             driverService.Add(newDriver1);
             driverService.Add(newDriver2);
+            driverService.Add(newDriver3);
         }
     }
 }

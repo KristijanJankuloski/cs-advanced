@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using taxi_workshop.Desktop.Fragments;
+using taxi_workshop.Desktop.Helpers;
 
 namespace taxi_workshop.Desktop
 {
@@ -22,6 +24,17 @@ namespace taxi_workshop.Desktop
         public MaintenenceWindow()
         {
             InitializeComponent();
+            tabItemChangePassword.Content = new ChangePasswordControl();
+
+            ListAllCarsListView.ItemsSource = ServiceHelper.carService.GetAll().Select(car => car.Print());
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceHelper.userService.CurrentUser = null;
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            Close();
         }
     }
 }

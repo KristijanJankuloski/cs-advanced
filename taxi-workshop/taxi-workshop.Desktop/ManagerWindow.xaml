@@ -9,7 +9,7 @@
         Icon="/taxi.png"
         Title="ManagerWindow" Height="450" Width="800">
     <Grid>
-        <TabControl x:Name="tabControlManager">
+        <TabControl x:Name="tabControlManager" SelectionChanged="tabControlManager_Selected">
             <TabItem Header="All drivers">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="dataGridListDrivers" CanUserAddRows="False" AutoGenerateColumns="False">
@@ -62,24 +62,52 @@
             </TabItem>
             <TabItem Header="Assign a driver">
                 <Grid Background="#FFE5E5E5">
-                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Content="Select from available drivers" VerticalAlignment="Bottom"></Label>
+                    <Label Content="Select from available cars" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" />
+                    <ListBox x:Name="assignDriverListBox" Grid.Row="1" Grid.Column="0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding FirstName}"></Label>
+                                    <Label Content="{Binding LastName}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <ListBox x:Name="assignCarListBox" Grid.Row="1" Grid.Column="1">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="{Binding Model}"></Label>
+                                    <Label Content="{Binding LicensePlate}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="btnAssignSelectedDriver" Grid.Column="1" Grid.Row="0" Content="Assign Driver to Car" Height="25" Width="120" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,10,10,0" />
                 </Grid>
             </TabItem>
             <TabItem Header="Unassign a driver">
                 <Grid Background="#FFE5E5E5">
-                    
+                    <DataGrid x:Name="unassignDriver" Margin="0,0,0,25" CanUserAddRows="False" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="First name" Binding="{Binding FirstName}" Width="120" />
+                            <DataGridTextColumn Header="Last name" Binding="{Binding LastName}" Width="120" />
+                            <DataGridTextColumn Header="Shift" Binding="{Binding Shift}" Width="80" />
+                            <DataGridTextColumn Header="Car" Binding="{Binding Path=Car.Model}" Width="120" />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Change password">
-                <Grid Background="#FFE5E5E5">
-                    <Label Content="Old password:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtOldPwd" HorizontalAlignment="Left" Margin="125,14,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Label Content="New password:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtNewPwd" HorizontalAlignment="Left" Margin="125,45,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Label Content="Reppeat password:" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
-                    <PasswordBox x:Name="txtRepeatPwd" HorizontalAlignment="Left" Margin="125,76,0,0" VerticalAlignment="Top" Width="167"/>
-                    <Button x:Name="btnChangePassword" Content="Change password" HorizontalAlignment="Left" Margin="194,108,0,0" VerticalAlignment="Top" Click="btnChangePassword_Click" Padding="2" />
-                </Grid>
+            <TabItem Header="Change password" x:Name="tabItemChangePassword">
             </TabItem>
         </TabControl>
         <Button x:Name="btnLogout" Content="Log out" HorizontalAlignment="Right" Margin="0,1,10,0" VerticalAlignment="Top" Height="20" Width="56" Click="btnLogout_Click" />
