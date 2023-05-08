@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="db\" />
     <Folder Include="Static\" />
   </ItemGroup>
 

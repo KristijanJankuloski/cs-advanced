@@ -71,5 +71,12 @@ namespace taxi_workshop.Desktop
             var driversWithCars = ServiceHelper.driverService.GetAll().Where(driver => driver.Car != null);
             unassignDriver.ItemsSource = driversWithCars;
         }
+
+        private void btnAssignSelectedDriver_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedDriver = (Driver)assignDriverListBox.SelectedItem;
+            var selectedCar = (Car)assignCarListBox.SelectedItem;
+            ServiceHelper.driverService.AssignDriver(selectedDriver, selectedCar);
+        }
     }
 }

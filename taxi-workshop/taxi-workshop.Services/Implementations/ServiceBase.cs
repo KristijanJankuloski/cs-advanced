@@ -10,7 +10,7 @@ namespace taxi_workshop.Services.Implementations
 
         public ServiceBase()
         {
-            _db = new LocalDb<T>();
+            _db = new fileSystemDb<T>();
         }
 
         public void Add(T entity)
