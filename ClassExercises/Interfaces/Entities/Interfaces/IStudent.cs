@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces.Entities.Interfaces
 {
-    public interface IStudent
+    public interface IStudent 
     {
         List<int> Grades { get; set; }
     }

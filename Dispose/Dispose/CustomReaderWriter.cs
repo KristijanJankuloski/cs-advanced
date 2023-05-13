@@ -39,6 +39,12 @@ namespace Dispose
         {
             _dispose(true);
         }
+
+        ~MyWriter()
+        {
+            Console.WriteLine("Destructor called");
+            Dispose();
+        }
     }
 
     public class MyReader : IDisposable
